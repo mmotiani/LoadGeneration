@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<workload name="osic_put" description="Creating objects of a given size.">
+
+  <storage type="swift" />
+
+
+  <workflow>
+    
+    <workstage name="init">
+
+	<work name="init_proxy11" type="init" workers="2" config="containers=r(1,10)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.6:80/auth/v1.0"/>
+      </work>
+
+      <work name="init_proxy12" type="init" workers="2" config="containers=r(11,20)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.7:80/auth/v1.0"/>
+      </work>
+	
+	<work name="init_proxy13" type="init" workers="2" config="containers=r(21,30)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.8:80/auth/v1.0"/>
+      </work>
+
+	<work name="init_proxy14" type="init" workers="2" config="containers=r(31,40)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.9:80/auth/v1.0"/>
+      </work>
+
+	<work name="init_proxy15" type="init" workers="2" config="containers=r(41,50)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.10:80/auth/v1.0"/>
+      </work>
+
+	<work name="init_proxy16" type="init" workers="2" config="containers=r(51,60)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.11:80/auth/v1.0"/>
+      </work>
+
+      <work name="init_proxy17" type="init" workers="2" config="containers=r(61,70)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.12:80/auth/v1.0"/>
+      </work>
+	
+	<work name="init_proxy18" type="init" workers="2" config="containers=r(71,80)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.13:80/auth/v1.0"/>
+      </work>
+
+	<work name="init_proxy19" type="init" workers="2" config="containers=r(81,90)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.14:80/auth/v1.0"/>
+      </work>
+
+	<work name="init_proxy20" type="init" workers="2" config="containers=r(91,100)">
+        <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.15:80/auth/v1.0"/>
+      </work>
+
+    </workstage>
+
+    <workstage name="prepare"> 
+
+	<work name="prepare11" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(1,10);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.6:80/auth/v1.0"/>
+      </work>
+
+      <work name="prepare12" type="prepare" 
+            workers="10" division="container" 
+            config="containers=r(11,20);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.7:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare13" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(21,30);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.8:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare14" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(31,40);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.9:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare15" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(41,50);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.10:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare16" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(51,60);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.11:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare17" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(61,70);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.12:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare18" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(71,80);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.13:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare19" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(81,90);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.14:80/auth/v1.0"/>
+      </work>
+
+	<work name="prepare20" type="prepare" 
+            workers="10" division="container"
+            config="containers=r(91,100);objects=r(1,1000);sizes=c(512)KB">
+       <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.15:80/auth/v1.0"/>
+      </work>
+
+    </workstage>
+
+  </workflow>
+
+
+</workload>

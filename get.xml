@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<workload name="osic_get" description="Performs GET operations.">
+
+  <storage type="swift" />
+  
+
+  <workflow>
+    <workstage name="GET">
+      
+    <work name="GET_proxy1" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.6:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+    <work name="GET_proxy2" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.7:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+     <work name="GET_proxy3" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.8:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+	<work name="GET_proxy4" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.9:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+
+	<work name="GET_proxy5" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.10:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+	<work name="GET_proxy6" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.11:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+    <work name="GET_proxy7" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.12:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+     <work name="GET_proxy8" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.13:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+	<work name="GET_proxy9" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.14:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+
+	<work name="GET_proxy10" workers="20" runtime="60">
+      <auth type="swauth" config="username=swiftcas;password=swiftcas;url=http://172.16.2.15:80/auth/v1.0"/>
+        <operation type="read" config="containers=u(1,100);objects=u(1,1000)" />
+      </work>
+
+
+    </workstage>
+
+  </workflow>
+</workload>
